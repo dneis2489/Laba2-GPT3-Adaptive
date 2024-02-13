@@ -486,6 +486,7 @@ p {
 .blog_section .all_news .main_news {
   display: flex;
   flex-direction: column;
+  max-height: 669px;
 }
 
 .blog_section .all_news .main_news .content_main_news {
