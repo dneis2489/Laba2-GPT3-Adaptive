@@ -496,7 +496,7 @@ p {
 .blog_section .all_news .main_news .content_main_news {
   display: flex;
   height: 100%;
-  width: 328px;
+  width: 100%;
 }
 
 .blog_section .all_news .all_other_news {
