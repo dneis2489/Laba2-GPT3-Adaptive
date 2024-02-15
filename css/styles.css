@@ -250,7 +250,7 @@ p {
   padding: 3rem;
   margin: 6rem 0;
   row-gap: 7rem;
-  background: url(../assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
+  background: url(../assets/img/what_is_gpt_3_bg.png) no-repeat 0 0 / cover;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__top {
@@ -496,6 +496,7 @@ p {
 .blog_section .all_news .main_news .content_main_news {
   display: flex;
   height: 100%;
+  width: 328px;
 }
 
 .blog_section .all_news .all_other_news {
