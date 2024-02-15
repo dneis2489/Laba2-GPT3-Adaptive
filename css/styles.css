@@ -489,9 +489,14 @@ p {
   max-height: 669px;
 }
 
+.blog_section .all_news .news_img {
+  width: 328px;
+}
+
 .blog_section .all_news .main_news .content_main_news {
   display: flex;
   height: 100%;
+  width: 328px;
 }
 
 .blog_section .all_news .all_other_news {
