@@ -230,6 +230,7 @@ p {
   flex-direction: column;
   row-gap: 0.5rem;
   cursor: pointer;
+  margin-top: 1rem;
 }
 
 .header .header__burger_menu.hidden {
