@@ -27,11 +27,14 @@
 /* Общие стили для всего приложения */
 
 body {
-
-  padding: 0 2rem;
-  width: 100%;
+  background: #031b34;
   padding: 0;
-  margin: 0;
+  overflow: auto;
+  width: 100%;
+}
+
+body.oh {
+  overflow: hidden;
 }
 
 .page {
@@ -147,15 +150,22 @@ p {
   max-width: 1920px;
   margin: 0 auto;
   width: 100%;
-  padding: 2rem 20rem;
+  padding: 2rem;
   position: fixed;
   justify-content: space-between;
   align-items: center;
   background: #020f1c;
+  column-gap: 5vw;
+  justify-content: center;
 }
 
 .header .header-logo {
   width: 162px;
+}
+
+.header .header__logo .logo__link {
+  display: flex;
+  align-items: center;
 }
 
 .header .header__menu .menu {
@@ -182,6 +192,80 @@ p {
   column-gap: 1rem;
 }
 
+.header .header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 9vw;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.header .header__right.hidden {
+  opacity: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  visibility: hidden;
+}
+
+.header .header__right .menu__close {
+  width: 38px;
+  height: 38px;
+}
+
+.header .header__right .menu__close.hidden {
+  display: none;
+}
+
+.header .header__burger_menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  cursor: pointer;
+}
+
+.header .header__burger_menu.hidden {
+  display: none;
+}
+
+.header .header__burger_menu .burger_menu__line,
+.header .header__right .menu__close .menu__line {
+  width: 43px;
+  height: 5px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.header .header__right .menu__close .menu__line:nth-child(1) {
+  position: relative;
+  top: 15px;
+  right: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.header .header__right .menu__close .menu__line:nth-child(2) {
+  position: relative;
+  top: 10px;
+  right: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
 /* Стили для первого экрана (Хиро секция) */
 
 .hero_section {
@@ -190,6 +274,7 @@ p {
   column-gap: 1rem;
   min-height: 60vh;
   margin: 14rem 0 3rem;
+  padding: 10px;
 }
 
 .hero_section .hero_section__left {
@@ -317,6 +402,7 @@ p {
   display: flex;
   column-gap: 6rem;
   margin: 6rem 0 2rem;
+  padding: 0 10px;
 }
 
 .future_here .future_here__left {
@@ -425,7 +511,7 @@ p {
   height: 173px;
   column-gap: 2rem;
   margin: 2rem 0 6rem;
-
+  padding: 0 10px;
   border: #000000 1px solid;
   border-radius: 10px;
   background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
@@ -576,6 +662,7 @@ p {
   flex-direction: row;
   column-gap: 8rem;
   margin: 7rem 0rem;
+  padding: 10px;
 }
 
 .footer .footer_menu {
@@ -583,7 +670,7 @@ p {
   display: flex;
   flex-direction: row;
   column-gap: 5rem;
-  flex-wrap: wrap;
+  row-gap: 3rem;
 }
 
 .footer .columm_menu {
@@ -616,4 +703,302 @@ p {
   background-color: #020e1b;
   width: 100%;
   text-align: center;
+}
+
+/* Медиа запросы для адаптива */
+
+@media screen and (max-width: 1366px) {
+  .header {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .all_news {
+    row-gap: 2rem;
+    flex-direction: column !important;
+  }
+
+  .main_news {
+    flex-direction: row !important;
+    justify-content: center;
+  }
+
+  .blog_section .all_news .main_news img {
+    max-width: 328px;
+  }
+
+  .content_main_news {
+    width: 360px !important;
+    height: 227px !important;
+  }
+
+  .all_other_news {
+    justify-content: center;
+    margin: auto;
+    max-width: 700px;
+  }
+
+  .news {
+    margin-top: 0;
+  }
+
+  .content_other_news {
+    margin-top: -5px;
+  }
+
+  .blog_section .headder_section {
+    margin: auto auto 2rem auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    align-content: center;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  .header .header__logo .logo__link img {
+    width: 200%;
+  }
+
+  .header .header__right {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 53px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background: #031b34;
+  }
+
+  .header .header__menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .header .header__menu .menu {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 48px;
+  }
+
+  .hero_section {
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 0;
+    /* margin: 0; */
+    width: 90%;
+  }
+
+  .hero_section .hero_section__left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero_section .hero_section__right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 60%;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons {
+    justify-content: center;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 4rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+    row-gap: 0;
+  }
+
+  .future_here {
+    column-gap: 0;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .future_here .future_here__left {
+    row-gap: 1rem;
+  }
+
+  .future_here .future_here__left h2 {
+    text-align: center;
+  }
+
+  .future_here .future_here__left a {
+    width: 100%;
+    text-align: right;
+  }
+
+  .exceeding_all_expectations {
+    flex-direction: column;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_left {
+    display: flex;
+    justify-content: center;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_left img {
+    width: 40%;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_right {
+    text-align: center;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_right p {
+    width: 100%;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_right .left__header {
+    width: 100%;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_right .left__cta {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  .hero_section {
+    width: 100%;
+  }
+
+  .brands_section {
+    margin-top: -15px;
+    padding-bottom: 0;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__top {
+    flex-direction: column;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 85%;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+    width: auto;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    flex-direction: column;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    row-gap: 2rem;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 3rem;
+  }
+
+  .what_is_chatgpt_section {
+    margin: 6rem 0 0;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container .container__content {
+    line-height: 1.5;
+  }
+
+  .footer .footer_menu {
+    flex-wrap: wrap;
+  }
+
+  .brands_section {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  a {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+    min-width: auto;
+  }
+
+  .future_here {
+    row-gap: 3rem;
+  }
+
+  .future_here .future_here__right .right__container {
+    flex-direction: column;
+  }
+
+  .future_here .future_here__right .right__container .container__header {
+    width: 100%;
+  }
+
+  .future_here .future_here__right .right__container .container__content {
+    width: 100%;
+  }
+
+  .future_here .future_here__right {
+    row-gap: 2rem;
+  }
 }
