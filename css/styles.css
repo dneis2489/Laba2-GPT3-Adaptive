@@ -753,6 +753,10 @@ p {
     margin: auto auto 2rem auto;
     text-align: center;
   }
+
+  .registration {
+    width: 95%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -866,6 +870,7 @@ p {
 
   .exceeding_all_expectations {
     flex-direction: column;
+    padding: 0 50px 0 50px;
   }
 
   .exceeding_all_expectations .exceeding_all_expectations_section_left {
@@ -891,7 +896,11 @@ p {
 
   .exceeding_all_expectations .exceeding_all_expectations_section_right .left__cta {
     width: 100%;
-    text-align: right;
+    text-align: center;
+  }
+
+  .registration {
+    width: 95%;
   }
 }
 
@@ -960,6 +969,18 @@ p {
 
   .brands_section {
     flex-wrap: wrap;
+  }
+
+  .exceeding_all_expectations {
+    padding: 0 50px 0 50px;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_right .left__cta {
+    text-align: center;
+  }
+
+  .registration {
+    width: 95%;
   }
 }
 
@@ -1045,6 +1066,18 @@ p {
   .footer {
     margin: 0;
   }
+
+  .exceeding_all_expectations {
+    padding: 0 50px 0 50px;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_right .left__cta {
+    text-align: center;
+  }
+
+  .registration {
+    width: 95%;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -1055,11 +1088,13 @@ p {
   .registration {
     flex-direction: column;
     row-gap: 10px;
+    width: 95%;
   }
 
   .registration .registration_content_left {
     align-items: center;
     text-align: center;
+    margin-left: 0;
   }
 
   .registration .registration_content_left h3 {
@@ -1068,5 +1103,13 @@ p {
 
   .registration .registration_button_right {
     align-items: center;
+  }
+
+  .exceeding_all_expectations {
+    padding: 0 50px 0 50px;
+  }
+
+  .exceeding_all_expectations .exceeding_all_expectations_section_right .left__cta {
+    text-align: center;
   }
 }
